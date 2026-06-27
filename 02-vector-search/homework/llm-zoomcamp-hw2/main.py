@@ -49,10 +49,13 @@ def main():
         query_3,
         num_results=5,
     )
-    print(text_search_result[0]['filename'])
+    for result in text_search_result:
+        print(result['filename'])
+    print("------")
     embedding_3 = embedder.encode(query_3)
     vector_search_result = vindex.search(embedding_3, num_results=5)
-    print(vector_search_result[0]['filename'])
+    for result in vector_search_result:
+        print(result['filename'])
 
     print("===========================================")
     query_4 = "How do I give the model access to tools?"
