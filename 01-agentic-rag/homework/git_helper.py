@@ -18,7 +18,9 @@ def load_lessons() -> list[dict[str, str]]:
         doc = file.parse()
         documents.append(doc)
 
-    chunks = chunk_documents(documents, size=2000, step=1000)
+    return documents
 
-    return chunks
+    # chunks = chunk_documents(documents, size=2000, step=1000)
+
+    # return chunks
 
